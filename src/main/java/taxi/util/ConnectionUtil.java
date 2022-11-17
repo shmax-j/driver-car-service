@@ -1,16 +1,44 @@
 package taxi.util;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.Set;
 
 public class ConnectionUtil {
-    private static final String URL =
-            "jdbc:mysql://sql.freedb.tech:3306/freedb_taxiDB?serverTimezone=UTC";
-    private static final String USERNAME = "freedb_shmax_unsafe2";
-    private static final String PASSWORD = "3?43FZvTuMr#G3q";
-    private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String propertiesPath = "/app.properties";
+    private static final String URL;
+    private static final String USERNAME;
+    private static final String PASSWORD;
+    private static final String JDBC_DRIVER;
+    private static final Properties appProperties;
+
+    static {
+        appProperties = new Properties();
+        try (InputStream inputStream
+                     = ConnectionUtil.class.getResourceAsStream(propertiesPath)) {
+            appProperties.load(inputStream);
+        } catch (IOException | NullPointerException e) {
+            throw new RuntimeException("Can't load "
+                    + "application properties", e);
+        }
+        if (!appProperties.keySet().containsAll(Set.of(
+                "db.url", "db.username", "db.password", "db.driver-path"
+        ))) {
+            throw new RuntimeException("Some properties for"
+                    + " db connection is missing!");
+        }
+        URL = appProperties.getProperty("db.url");
+        USERNAME = appProperties.getProperty("db.username");
+        PASSWORD = appProperties.getProperty("db.password");
+        JDBC_DRIVER = appProperties.getProperty("db.driver-path");
+    }
 
     static {
         try {
