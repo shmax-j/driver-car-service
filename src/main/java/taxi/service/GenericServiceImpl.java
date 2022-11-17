@@ -3,7 +3,7 @@ package taxi.service;
 import java.util.List;
 import taxi.dao.GenericDao;
 
-public abstract class GenericServiceImpl<T> implements GenericService<T>{
+public abstract class GenericServiceImpl<T> implements GenericService<T> {
 
     @Override
     public T create(T element) {

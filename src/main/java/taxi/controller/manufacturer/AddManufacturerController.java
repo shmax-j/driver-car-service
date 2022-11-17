@@ -6,12 +6,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import taxi.lib.Injector;
 import taxi.model.Manufacturer;
 import taxi.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class AddManufacturerController extends HttpServlet {
+    private static final Logger logger = LogManager.getLogger(AddManufacturerController.class);
     private static final Injector injector = Injector.getInstance("taxi");
     private final ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);
@@ -28,6 +31,7 @@ public class AddManufacturerController extends HttpServlet {
         String country = req.getParameter("country");
         Manufacturer manufacturer = new Manufacturer(name, country);
         manufacturerService.create(manufacturer);
+        logger.info("Manufacturer created: {}", manufacturer);
         resp.sendRedirect(req.getContextPath() + "/manufacturers/add");
     }
 }

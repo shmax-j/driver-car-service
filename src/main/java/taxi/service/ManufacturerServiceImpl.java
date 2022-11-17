@@ -11,6 +11,7 @@ public class ManufacturerServiceImpl extends GenericServiceImpl<Manufacturer>
         implements ManufacturerService {
     @Inject
     private ManufacturerDao manufacturerDao;
+
     @Override
     protected GenericDao<Manufacturer> getDao() {
         return manufacturerDao;
