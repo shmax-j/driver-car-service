@@ -1,6 +1,17 @@
 # :car: Driver-car service
 
-Simple JavaEE based web application, which can perform some of CRUD, and some other operations
+Simple JavaEE based web application, which can perform some of CRUD, and some other operations 
+
+<details>
+  <summary> <h4> Table of Contents </h4>  </summary>
+    <ul>
+        <li><a href="#wrench-functionality">Features</a></li>
+        <li><a href="#-deployed-on-heroku--status-">Deploy</a></li>
+        <li><a href="#blue_book-project-structure">Project stucture</a></li>
+        <li><a href="#-technologies">Technologies</a></li>
+        <li><a href="#-setup-guide">SetUp guide</a></li>
+    </ul>
+</details>
 
 ## :wrench: Functionality
 ### Authentication
