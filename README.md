@@ -15,6 +15,7 @@ Simple JavaEE based web application, which can perform some of CRUD, and some ot
 
 ## :wrench: Functionality
 ### Authentication
+
 Authentication with Driver as user
 
 Registration by adding drivers
@@ -44,7 +45,8 @@ Project structure consists of 3 + db levels:
 - MySql database
 
 ### DB Schema
-![image](https://user-images.githubusercontent.com/26524991/202564948-0ca37bd8-0771-4291-9916-98645fbc288d.png)
+![driver-service-db-diagram](https://user-images.githubusercontent.com/26524991/202734416-f46e07bf-9c63-42a9-998b-48eabe3f44ea.png)
+
 
 ## ⚙ Technologies
 
