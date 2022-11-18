@@ -2,6 +2,4 @@
 *.iml
 target/*
 logs/*
-Procfile
-system.properties
 src/main/resources/app.properties
