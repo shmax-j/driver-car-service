@@ -30,9 +30,9 @@ Ability to connect Driver to Car
 
 Ability to display all Cars connected to authenticated Driver
 
-## ![](https://img.icons8.com/windows/38/heroku.png) Deployed on Heroku | status: ![](https://heroku-status-badges.herokuapp.com/tranquil-wave-04624)
+## ![](https://img.icons8.com/windows/38/heroku.png) Deployed on Heroku | status: ![](https://heroku-status-badges.herokuapp.com/driver-car-app)
 
-[link](https://tranquil-wave-04624.herokuapp.com/login)
+[registration form](https://driver-car-app.herokuapp.com/drivers/add)
 
 ## :blue_book: Project structure
 
